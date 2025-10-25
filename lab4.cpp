@@ -16,7 +16,7 @@ int main()
 
     for (int p = 0; p < 9; ++p)
     {
-        temp = vl[p];
+        temp = abs(vl[p]);
         while (temp >= 10)
         {
             temp /= 10;
@@ -50,6 +50,7 @@ int main()
     int ans = 0;
     int str = -1;
     int sc[s][c];
+    int fal = 0;
 
     for (int i = 0; i < s; ++i)
     {
@@ -62,9 +63,14 @@ int main()
     for (int i = 0; i < s; ++i)
     {
         int sm = 0;
+
         for (int j = 0; j < c; ++j)
         {
             sm += sc[i][j];
+        }
+        if (sm == 0)
+        {
+            fal += 1;
         }
 
         if (abs(sm) > ans)
@@ -74,17 +80,23 @@ int main()
         }
     }
 
-    for (int j = 0; j < c; ++j)
+    if (fal == s)
     {
-        sc[str][j] = 999;
+        std::cout << " Некорректный ввод " << std::endl;
     }
-
-    for (int i = 0; i < s; ++i)
-    {
+    else
+    { 
         for (int j = 0; j < c; ++j)
         {
-            std::cout << sc[i][j] << " ";
+            sc[str][j] = 999;
         }
-        std::cout << std::endl;
+        for (int i = 0; i < s; ++i)
+        {
+            for (int j = 0; j < c; ++j)
+            {
+                std::cout << sc[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
     }
 }
