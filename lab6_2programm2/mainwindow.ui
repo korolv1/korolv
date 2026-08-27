@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>900</width><height>500</height></rect></property>
+  <property name="windowTitle"><string>Вывод данных — Маркеры</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item><widget class="QPushButton" name="btnLoad"><property name="text"><string>Загрузить .json</string></property></widget></item>
+    <item>
+     <layout class="QHBoxLayout" name="tablesLayout">
+      <item>
+       <layout class="QVBoxLayout">
+        <item><widget class="QLabel" name="labelValid"><property name="text"><string>Корректные</string></property></widget></item>
+        <item><widget class="QTableWidget" name="tableValid"/></item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout">
+        <item><widget class="QLabel" name="labelBroken"><property name="text"><string>Ошибки</string></property></widget></item>
+        <item><widget class="QTableWidget" name="tableBroken"/></item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
